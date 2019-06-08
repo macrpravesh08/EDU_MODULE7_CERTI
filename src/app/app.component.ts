@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UnitTestServiceService } from './unit-test-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Edu-Module7-App';
+  users: any;
+  constructor(private unitTestServiceService: UnitTestServiceService) {
+    this.users = this.unitTestServiceService.getUsers();
+  }
+
 }
